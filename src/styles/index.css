@@ -1,0 +1,12 @@
+body {
+  font-family: fantasy;
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+
+.wrapper {
+  max-inline-size: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
