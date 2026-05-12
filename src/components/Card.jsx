@@ -3,17 +3,19 @@ import CardProfile from './CardProfile';
 import '../styles/Card.css';
 
 function Card() {
-    const [cardState, setCardState] = useState("active");
+    const [pokemonId] = useState(() => Math.ceil(Math.random() * 151));
+
+    const [cardStatus, setCardStatus] = useState("active");
 
     const handleCardClick = () => {
-        cardState === "active" ? setCardState("inactive") : setCardState("active");
+        cardStatus === "active" ? setCardStatus("inactive") : setCardStatus("active");
     };
 
     return (
-        <div className='card' onClick={handleCardClick} data-status={cardState}>
-            <h3>{cardState}</h3>
+        <div className='card' onClick={handleCardClick} data-status={cardStatus}>
+            <h3>{cardStatus}</h3>
             <div className="profile-container">
-                {cardState === "active" && <CardProfile />}
+                {cardStatus === "active" && <CardProfile pokemonId={pokemonId} />}
             </div>
         </div>
     )

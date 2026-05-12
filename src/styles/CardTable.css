@@ -1,0 +1,4 @@
+.cardTable {
+    display: grid;
+    grid-area: repeat(1fr, 3);
+}

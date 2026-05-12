@@ -3,7 +3,7 @@ import Card from './Card';
 
 function CardTable() {
     return (
-        <div>
+        <div className='cardTable'>
             <Card />
         </div>
     )

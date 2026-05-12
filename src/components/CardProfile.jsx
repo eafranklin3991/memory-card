@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getPokemon } from '../api/pokemon';
 
-function CardProfile() {
-    const [pokemonId] = useState(() => Math.ceil(Math.random() * 151));
+function CardProfile({ pokemonId }) {
     const [pokemonData, setPokemonData] = useState(null);
     const [pokemonName, setPokemonName] = useState('');
     const [pokemonImgUrl, setPokemonImgUrl] = useState('');
