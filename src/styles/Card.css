@@ -1,6 +1,8 @@
 .card {
     border: 0.25rem white double;
     border-radius: 1rem;
-    width: fit-content;
+    width: 8rem;
+    height: 17rem;
     cursor: pointer;
+    padding-inline: 1rem;
 }

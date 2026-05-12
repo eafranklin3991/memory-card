@@ -1,11 +1,11 @@
 import '../styles/App.css'
-import Card from '../components/Card';
+import CardTable from './CardTable';
 
 function App() {
-  return(
+  return (
     <div className="wrapper">
-        <h1>Memory Card Matching Game</h1>
-        <Card />
+      <h1>Memory Card Matching Game</h1>
+      <CardTable />
     </div>
   )
 }
