@@ -4,18 +4,21 @@ import '../styles/Card.css';
 
 function Card() {
     const [pokemonId] = useState(() => Math.ceil(Math.random() * 151));
+    const [isFlipped, setIsFlipped] = useState(false);
+    const [isRevealed, setIsRevealed] = useState(false);
 
-    const [cardStatus, setCardStatus] = useState("active");
-
-    const handleCardClick = () => {
-        cardStatus === "active" ? setCardStatus("inactive") : setCardStatus("active");
+    const handleCardClick = (element) => {
+        isFlipped ? setIsFlipped(false) : setIsFlipped(true);
     };
 
+    const handleTransitionEnd = () => {
+        isRevealed ? setIsFlipped(false) : setIsFlipped(true);
+    }
+
     return (
-        <div className='card' onClick={handleCardClick} data-status={cardStatus}>
-            <h3>{cardStatus}</h3>
+        <div className='card' onClick={handleCardClick} onTransitionEnd={handleCardFlip} data-status={cardStatus}>
             <div className="profile-container">
-                {cardStatus === "active" && <CardProfile pokemonId={pokemonId} />}
+                {cardStatus === "revealed" && <CardProfile pokemonId={pokemonId} />}
             </div>
         </div>
     )

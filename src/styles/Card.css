@@ -2,7 +2,12 @@
     border: 0.25rem white double;
     border-radius: 1rem;
     width: 8rem;
-    height: 17rem;
+    height: 13rem;
     cursor: pointer;
     padding-inline: 1rem;
+    transition: 1s ease;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
 }

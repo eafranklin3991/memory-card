@@ -15,7 +15,7 @@ function CardProfile({ pokemonId }) {
     }, []);
 
     return (
-        <div>
+        <div className='profile'>
             <h3>NO. {pokemonId}</h3>
             <h3>{pokemonName}</h3>
             <img src={pokemonImgUrl} alt={pokemonName} />
