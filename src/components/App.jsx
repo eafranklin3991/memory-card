@@ -1,11 +1,11 @@
 import '../styles/App.css'
-import CardProfile from '../components/CardProfile';
+import Card from '../components/Card';
 
 function App() {
   return(
     <div className="wrapper">
         <h1>Memory Card Matching Game</h1>
-        <CardProfile />
+        <Card />
     </div>
   )
 }
