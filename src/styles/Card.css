@@ -5,9 +5,13 @@
     height: 13rem;
     cursor: pointer;
     padding-inline: 1rem;
-    transition: 1s ease;
+    transition: 1s ease-out;
 }
 
-.card.flipped {
+.card[data-flipped="true"] {
+    transform: rotateY(180deg);
+}
+
+.profile-container {
     transform: rotateY(180deg);
 }

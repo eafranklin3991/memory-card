@@ -7,18 +7,18 @@ function Card() {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isRevealed, setIsRevealed] = useState(false);
 
-    const handleCardClick = (element) => {
-        isFlipped ? setIsFlipped(false) : setIsFlipped(true);
+    const handleCardFlip = () => {
+        setIsFlipped(prev => !prev);
     };
 
     const handleTransitionEnd = () => {
-        isRevealed ? setIsFlipped(false) : setIsFlipped(true);
+        isFlipped ? setIsRevealed(true) : setIsRevealed(false);
     }
 
     return (
-        <div className='card' onClick={handleCardClick} onTransitionEnd={handleCardFlip} data-status={cardStatus}>
+        <div className='card' onClick={handleCardFlip} onTransitionEnd={handleTransitionEnd} data-flipped={isFlipped}>
             <div className="profile-container">
-                {cardStatus === "revealed" && <CardProfile pokemonId={pokemonId} />}
+                {isRevealed && <CardProfile pokemonId={pokemonId} />}
             </div>
         </div>
     )
