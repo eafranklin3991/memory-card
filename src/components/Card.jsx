@@ -2,8 +2,7 @@ import { useState } from 'react'
 import CardProfile from './CardProfile';
 import '../styles/Card.css';
 
-function Card() {
-    const [pokemonId] = useState(() => Math.ceil(Math.random() * 151));
+function Card({ pairId, pokemonId }) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isRevealed, setIsRevealed] = useState(false);
 
@@ -16,7 +15,7 @@ function Card() {
     }
 
     return (
-        <div className='card' onClick={handleCardFlip} onTransitionEnd={handleTransitionEnd} data-flipped={isFlipped}>
+        <div className='card' onClick={handleCardFlip} onTransitionEnd={handleTransitionEnd} data-flipped={isFlipped} pair-id={pairId}>
             <div className="profile-container">
                 {isRevealed && <CardProfile pokemonId={pokemonId} />}
             </div>
