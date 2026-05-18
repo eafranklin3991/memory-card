@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Card from './Card';
+import '../styles/CardTable.css'
 
 function CardTable() {
     return (
         <div className='cardTable'>
-            <Card />
+            {Array(10).fill(true).map((_, i) => <Card key={i} />)}
         </div>
     )
 }

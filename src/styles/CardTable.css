@@ -1,4 +1,5 @@
 .cardTable {
     display: grid;
-    grid-area: repeat(1fr, 3);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
 }
