@@ -4,14 +4,30 @@ import '../styles/CardTable.css'
 
 function CardTable() {
     const pokemonArray = Array(5).fill(true).map(() => Math.ceil(Math.random() * 151));
+    const doubleArray = [...pokemonArray, ...pokemonArray];
 
-    const cardArray = Array(5).fill(true).map((_, i) => {
-        const pokemonId = pokemonArray[i];
+    function shuffle(array) {
+        let currentIndex = array.length;
+
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+
+            // Pick a remaining element...
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+    }
+
+    const shuffledArray = shuffle(doubleArray);
+
+    const cardArray = Array(10).fill(true).map((_, i) => {
+        const pokemonId = doubleArray[i];
         return (
-            <Fragment key={i}>
-                <Card pairId={"A"} pokemonId={pokemonId} />
-                <Card pairId={"B"} pokemonId={pokemonId} />
-            </Fragment>
+            <Card pokemonId={pokemonId} key={i} />
         )
     })
 
