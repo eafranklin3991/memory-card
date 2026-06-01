@@ -4,7 +4,7 @@ import CardTable from './CardTable';
 function App() {
   return (
     <div className="wrapper">
-      <h1>Memory Card Matching Game</h1>
+      <h1 className='game-title'>Memory Card Matching Game</h1>
       <CardTable />
     </div>
   )

@@ -1,7 +1,6 @@
 body {
   font-family: fantasy;
   background-image: url("../images/pokemon_red_houses.jpg");
-  color: white;
   margin: 0;
 }
 
@@ -9,4 +8,10 @@ body {
   max-inline-size: 90%;
   margin: 0 auto;
   text-align: center;
+}
+
+.game-title {
+  color: dimgray;
+  background-color: white;
+  border: dimgray solid 0.2rem;
 }
