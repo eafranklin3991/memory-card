@@ -10,7 +10,7 @@
     transition: 1s ease-out;
 }
 
-.card[data-flipped="true"] {
+.card[data-revealed="true"] {
     transform: rotateY(180deg);
 }
 
