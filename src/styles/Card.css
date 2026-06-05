@@ -14,6 +14,10 @@
     transform: rotateY(180deg);
 }
 
+.card[data-matched="true"] {
+    transform: rotateY(180deg);
+}
+
 .profile-container {
     transform: rotateY(180deg);
 }

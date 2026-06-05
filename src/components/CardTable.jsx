@@ -21,32 +21,32 @@ function initCards(numMatches) {
 
 function CardTable() {
     const cards = useRef(initCards(5));
-    const [revealed, setRevealed] = useState([{ id: "", pokemonId: "" }]);
-    const [matched, setMatched] = useState([{ id: "", pokemonId: "" }]);
+    const [revealed, setRevealed] = useState([]);
+    const [matched, setMatched] = useState([]);
 
     const handleCardflip = (index) => {
         const card = cards.current[index];
 
-        // If there are no cards flipped, stay revealed
-        if (revealed.length === 0) {
-            const newRevealed = [{ id: card.id, pokemonId: card.pokemonId }]
-            setRevealed(newRevealed);
-        }
+        // Don't allow flipping already matched cards
+        if (matched.includes(card.pokemonId)) return;
 
-        // If there is only one card flipped and the same card is clicked again, flip back
-        if (revealed["id"].includes(card.id)) {
-            const newRevealed = revealed["id"].filter(item => item !== card.id)
-            setRevealed(newRevealed);
+        // Don't allow flipping a third card
+        if (revealed.length === 2) return;
+
+        if (revealed.length === 0) {
+            setRevealed([{ id: card.id, pokemonId: card.pokemonId }]);
+        } else if (revealed.some(item => item.id === card.id)) {
+            // Same card flipped - unflip it
+            setRevealed(revealed.filter(item => item.id !== card.id))
+        } else if (revealed.some(item => item.pokemonId === card.pokemonId)) {
+            // Match - stay flipped
+            setRevealed([]);
+            setMatched([...matched, card.pokemonId]);
+        } else {
+            // No matches - show second card and then hide both
+            setRevealed([...revealed, { id: card.id, pokemonId: card.pokemonId }]);
+            setTimeout(() => setRevealed([]), 1000);
         }
-        // If there are two cards flipped and a match, stay revealed
-        else if (revealed["pokemonId"].includes(card.pokemonId)) {
-            const newRevealed = [...revealed, { id: card.id, pokemonId: card.pokemonId }]
-            setRevealed(newRevealed);
-        }
-        // If there are two cards flipped and no matches, flip back
-        else {
-            return
-        };
     }
 
     return (
@@ -55,7 +55,8 @@ function CardTable() {
                 <Card
                     key={card.id}
                     pokemonId={card.pokemonId}
-                    isRevealed={revealed.includes(index)}
+                    isRevealed={revealed.some(item => item.id === card.id)}
+                    isMatched={matched.includes(card.pokemonId)}
                     onClick={() => handleCardflip(index)}
                 ></Card>
             )
