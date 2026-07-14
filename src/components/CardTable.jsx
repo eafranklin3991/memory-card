@@ -15,8 +15,17 @@ function shuffle(array) {
 }
 
 function initCards(numMatches) {
-    const ids = Array(numMatches).fill(null).map(() => Math.ceil(Math.random() * 151));
-    return shuffle([...ids, ...ids]).map((pokemonId, i) => ({ id: i, pokemonId }));
+    let idSet = new Set();
+
+    // Ensure there aren't duplicate pokemon ids
+    while (idSet.size < numMatches) {
+        const potential_id = Math.ceil(Math.random() * 151);
+        idSet.add(potential_id);
+    }
+
+    const idArray = Array.from(idSet);
+    
+    return shuffle([...idArray, ...idArray]).map((pokemonId, i) => ({ id: i, pokemonId }));
 }
 
 function CardTable() {
