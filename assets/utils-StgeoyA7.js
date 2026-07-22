@@ -1,0 +1,1 @@
+function e(e){typeof PJSW_DEBUG<`u`&&console.log(e)}function t(e,t){return e.cache&&typeof window<`u`&&t!==void 0}export{e as n,t};

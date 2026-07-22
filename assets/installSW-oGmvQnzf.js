@@ -1,0 +1,1 @@
+import{n as e}from"./utils-StgeoyA7.js";function t(){navigator&&window&&`serviceWorker`in navigator&&window.addEventListener(`load`,function(){navigator.serviceWorker.register(`./pokeapi-js-wrapper-sw.js`,{scope:`./`}).catch(t=>{e(`SW installation failed with the following error:`),e(t)})})}export{t as installSW};
