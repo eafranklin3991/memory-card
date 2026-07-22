@@ -1,6 +1,6 @@
 .cardTable {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));  /* TODO: Make number of columns dependent on number of cards */
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1rem;
     place-items: center;
 }
