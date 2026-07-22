@@ -9,15 +9,3 @@
     padding-inline: 1rem;
     transition: 1s ease-out;
 }
-
-.card[data-revealed="true"] {
-    transform: rotateY(180deg);
-}
-
-.card[data-matched="true"] {
-    transform: rotateY(180deg);
-}
-
-.profile-container {
-    transform: rotateY(180deg);
-}
