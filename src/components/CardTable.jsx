@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import Card from './Card';
 import '../styles/CardTable.css'
 
@@ -29,12 +29,12 @@ function initCards(numMatches) {
 }
 
 function CardTable() {
-    const cards = useRef(initCards(5));
+    const [cards] = useState(() => initCards(5));
     const [revealed, setRevealed] = useState([]);
     const [matched, setMatched] = useState([]);
 
     const handleCardflip = (index) => {
-        const card = cards.current[index];
+        const card = cards[index];
 
         // Don't allow flipping already matched cards
         if (matched.includes(card.pokemonId)) return;
@@ -54,13 +54,13 @@ function CardTable() {
         } else {
             // No matches - show second card and then hide both
             setRevealed([...revealed, { id: card.id, pokemonId: card.pokemonId }]);
-            setTimeout(() => setRevealed([]), 1000);
+            setTimeout(() => setRevealed([]), 500);
         }
     }
 
     return (
         <div className='cardTable'>
-            {cards.current.map((card, index) =>
+            {cards.map((card, index) =>
                 <Card
                     key={card.id}
                     pokemonId={card.pokemonId}
