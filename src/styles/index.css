@@ -4,13 +4,13 @@
 }
 
 body {
-  font-family: fantasy;
+  font-family: Pokemon;
   background-image: url("../images/pokemon_red_houses.jpg");
   margin: 0;
 }
 
 .wrapper {
-  max-inline-size: 90%;
+  max-inline-size: 50%;
   margin: 0 auto;
   text-align: center;
 }
