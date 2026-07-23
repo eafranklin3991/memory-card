@@ -2,17 +2,15 @@ import { useState, useEffect } from 'react'
 import { getPokemon } from '../api/pokemon';
 
 function CardProfile({ pokemonId }) {
-    const [pokemonData, setPokemonData] = useState(null);
     const [pokemonName, setPokemonName] = useState('');
     const [pokemonImgUrl, setPokemonImgUrl] = useState(null);
 
     useEffect(() => {
         getPokemon(pokemonId).then((result) => {
-            setPokemonData(result);
             setPokemonName(result.name);
             setPokemonImgUrl(result.sprites.front_default);
         })
-    }, []);
+    }, [pokemonId]);
 
     return (
         <div className='profile'>
