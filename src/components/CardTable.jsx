@@ -28,8 +28,9 @@ function initCards(numMatches) {
     return shuffle([...idArray, ...idArray]).map((pokemonId, i) => ({ id: i, pokemonId }));
 }
 
-function CardTable() {
-    const [cards] = useState(() => initCards(5));
+function CardTable( {setGameWon} ) {
+    const [numMatches] = useState(5);
+    const [cards] = useState(() => initCards(numMatches));
     const [revealed, setRevealed] = useState([]);
     const [matched, setMatched] = useState([]);
 
@@ -49,8 +50,13 @@ function CardTable() {
             setRevealed(revealed.filter(item => item.id !== card.id))
         } else if (revealed.some(item => item.pokemonId === card.pokemonId)) {
             // Match - stay flipped
+            const newMatched = [...matched, card.pokemonId];
             setRevealed([]);
-            setMatched([...matched, card.pokemonId]);
+            setMatched(newMatched);
+            // All cards matched, game won!
+            if (newMatched.length === numMatches) {
+                setGameWon(true);
+            }
         } else {
             // No matches - show second card and then hide both
             setRevealed([...revealed, { id: card.id, pokemonId: card.pokemonId }]);

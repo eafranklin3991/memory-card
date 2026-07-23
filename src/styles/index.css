@@ -14,10 +14,3 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-
-.game-title {
-  font-family: Pokemon;
-  color: dimgray;
-  background-color: white;
-  border: dimgray solid 0.2rem;
-}
