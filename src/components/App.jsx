@@ -9,7 +9,7 @@ function App() {
     <div className='wrapper'>
       <h1 className='game-title'>Memory Card Matching Game</h1>
       {gameWon && <h3 className='game-message'>You win!</h3>}
-      <CardTable gameWon={gameWon} setGameWon={setGameWon}/>
+      <CardTable setGameWon={setGameWon}/>
       <ScoreBoard />
     </div>
   )
