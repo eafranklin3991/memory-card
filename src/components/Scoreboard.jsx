@@ -1,9 +1,8 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 function Scoreboard() {
 
-    const revealedIds = [];
-    const matchedIds = [];
+    return
 
 }
 

@@ -28,7 +28,7 @@ function initCards(numMatches) {
     return shuffle([...idArray, ...idArray]).map((pokemonId, i) => ({ id: i, pokemonId }));
 }
 
-function CardTable( {setGameWon} ) {
+function CardTable({ setGameWon }) {
     const [numMatches] = useState(5);
     const [cards] = useState(() => initCards(numMatches));
     const [revealed, setRevealed] = useState([]);
