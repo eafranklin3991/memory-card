@@ -1,38 +1,7 @@
-import { useState } from 'react'
 import Card from './Card';
 import '../styles/CardTable.css'
 
-function shuffle(array) {
-    const shuffled = [...array];
-    let currentIndex = array.length;
-    while (currentIndex != 0) {
-        let randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [shuffled[currentIndex], shuffled[randomIndex]] = [
-            shuffled[randomIndex], shuffled[currentIndex]];
-    }
-    return shuffled;
-}
-
-function initCards(numMatches) {
-    let idSet = new Set();
-
-    // Ensure there aren't duplicate pokemon ids
-    while (idSet.size < numMatches) {
-        const potential_id = Math.ceil(Math.random() * 151);
-        idSet.add(potential_id);
-    }
-
-    const idArray = Array.from(idSet);
-    
-    return shuffle([...idArray, ...idArray]).map((pokemonId, i) => ({ id: i, pokemonId }));
-}
-
-function CardTable({ setGameWon }) {
-    const [numMatches] = useState(5);
-    const [cards] = useState(() => initCards(numMatches));
-    const [revealed, setRevealed] = useState([]);
-    const [matched, setMatched] = useState([]);
+function CardTable({ cards, numMatches, setGameWon, matched, setRevealed, revealed, setMatched }) {
 
     const handleCardflip = (index) => {
         const card = cards[index];

@@ -1,26 +1,26 @@
 .game-title {
-  font-family: Pokemon-Hollow;
+  font-family: 'Pokemon-Hollow';
   color: dimgray;
   background-color: white;
   border: dimgray solid 0.2rem;
 }
 
 .game-message {
-  font-family: 'Pokemon-Solid';
+  font-family: 'Pokemon-Hollow';
   color: red;
   padding-block: 0.25rem;
   background-color: white;
-  border: dimgray solid 0.1rem;
+  border: red dotted 0.5rem;
 }
 
 .restart-btn {
+  margin-bottom: 1rem;
   font-family: 'Pokemon-Solid';
   font-size: larger;
   background-color: white;
-  color: dimgray;
-  border: dimgray solid 0.2rem;
+  color: gold;
+  border: gold dotted 0.5rem;
   padding-inline: 1rem;
-  margin-bottom: 1rem;
   cursor: pointer;
 }
 
