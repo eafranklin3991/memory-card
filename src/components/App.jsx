@@ -43,14 +43,22 @@ function App() {
     setRevealed([]);
     setMatched([]);
     setGameWon(false);
+    setRestartBtnStatus(false);
   }
+  const [restartBtnStatus, setRestartBtnStatus] = useState(false);
   return (
     <div className="wrapper">
       <h1 className="game-title">Memory Card Matching Game</h1>
-      <button className="restart-btn" onClick={restartGame}>
-        Restart
-      </button>
       {gameWon && <h3 className="game-message">All Cards Matched!</h3>}
+      {restartBtnStatus && (
+        <button
+          className="restart-btn"
+          onClick={restartGame}
+          data-display={restartBtnStatus}
+        >
+          Restart
+        </button>
+      )}
       <CardTable
         cards={cards}
         numMatches={numMatches}
@@ -59,6 +67,7 @@ function App() {
         setRevealed={setRevealed}
         matched={matched}
         setMatched={setMatched}
+        setRestartBtnStatus={setRestartBtnStatus}
       />
     </div>
   );
