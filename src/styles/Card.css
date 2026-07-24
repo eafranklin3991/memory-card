@@ -1,11 +1,11 @@
 .card {
-    font-family: 'Pokemon-Hollow';
-    color: white;
-    border: 0.2rem solid black;
-    border-radius: 1rem;
-    background-color: gray;
-    width: 8rem;
-    height: 13rem;
-    cursor: pointer;
-    padding-inline: 1rem;
+  font-family: "Pokemon-Hollow";
+  color: white;
+  border: 0.2rem solid black;
+  border-radius: 1rem;
+  background-color: gray;
+  min-width: 7dvh;
+  min-height: 12dvh;
+  cursor: pointer;
+  padding-inline: 1rem;
 }
