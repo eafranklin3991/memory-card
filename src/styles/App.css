@@ -3,6 +3,7 @@
   color: dimgray;
   background-color: white;
   border: dimgray solid 0.2rem;
+  font-size: large;
 }
 
 .game-message {
@@ -11,6 +12,7 @@
   padding-block: 0.25rem;
   background-color: white;
   border: red dotted 0.5rem;
+  font-size: medium;
 }
 
 .restart-btn {
@@ -21,6 +23,7 @@
   border: gold dotted 0.5rem;
   padding-inline: 1rem;
   cursor: pointer;
+  font-size: medium;
 }
 
 .restart-btn:active {

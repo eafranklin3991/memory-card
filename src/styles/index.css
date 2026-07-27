@@ -1,15 +1,15 @@
 @font-face {
-  font-family: 'Pokemon-Hollow';
-  src: url('../fonts/pokemon/Pokemon\ Hollow.ttf');
+  font-family: "Pokemon-Hollow";
+  src: url("../fonts/pokemon/Pokemon\ Hollow.ttf");
 }
 
 @font-face {
-  font-family: 'Pokemon-Solid';
-  src: url('../fonts/pokemon/Pokemon\ Solid.ttf');
+  font-family: "Pokemon-Solid";
+  src: url("../fonts/pokemon/Pokemon\ Solid.ttf");
 }
 
 body {
-  font-family: Pokemon;
+  font-family: "Pokemon-Solid";
   background-image: url("../images/pokemon_red_houses.jpg");
   margin: 0;
 }
