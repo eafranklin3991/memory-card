@@ -1,9 +1,22 @@
-// import { useState } from 'react';
+import { useEffect } from "react";
 
-function Scoreboard() {
+function Scoreboard({
+  counter,
+  gameWon,
+  scores,
+  setScores,
+  bestTime,
+  setBestTime,
+}) {
+  useEffect(() => {
+    if (gameWon) {
+      const updatedScores = [...scores, counter];
+      setScores(updatedScores);
+      setBestTime(Math.min(...updatedScores));
+    }
+  }, [gameWon, setScores, counter, scores, bestTime, setBestTime]);
 
-    return
-
+  return <p>Best Time: {bestTime} seconds</p>;
 }
 
-export default Scoreboard
+export default Scoreboard;

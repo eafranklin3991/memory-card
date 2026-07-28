@@ -1,6 +1,7 @@
 import "../styles/App.css";
 import CardTable from "./CardTable";
 import Timer from "./Timer";
+import Scoreboard from "./Scoreboard";
 import { useState } from "react";
 
 function App() {
@@ -51,6 +52,8 @@ function App() {
   }
   const [restartBtnStatus, setRestartBtnStatus] = useState(false);
   const [counter, setCounter] = useState(0);
+  const [scores, setScores] = useState([]);
+  const [bestTime, setBestTime] = useState(counter);
   return (
     <div className="wrapper">
       <h1 className="game-title">Memory Card Matching Game</h1>
@@ -61,6 +64,14 @@ function App() {
           setCounter={setCounter}
         />
         <span>|</span>
+        <Scoreboard
+          counter={counter}
+          gameWon={gameWon}
+          scores={scores}
+          setScores={setScores}
+          bestTime={bestTime}
+          setBestTime={setBestTime}
+        />
       </div>
       <div className="menu-container">
         {gameWon && <h3 className="game-message">All Cards Matched!</h3>}
