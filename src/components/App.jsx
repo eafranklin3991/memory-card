@@ -54,21 +54,26 @@ function App() {
   return (
     <div className="wrapper">
       <h1 className="game-title">Memory Card Matching Game</h1>
-      <Timer
-        gameStarted={gameStarted}
-        counter={counter}
-        setCounter={setCounter}
-      />
-      {gameWon && <h3 className="game-message">All Cards Matched!</h3>}
-      {restartBtnStatus && (
-        <button
-          className="restart-btn"
-          onClick={restartGame}
-          data-display={restartBtnStatus}
-        >
-          Restart
-        </button>
-      )}
+      <div className="timer-container">
+        <Timer
+          gameStarted={gameStarted}
+          counter={counter}
+          setCounter={setCounter}
+        />
+        <span>|</span>
+      </div>
+      <div className="menu-container">
+        {gameWon && <h3 className="game-message">All Cards Matched!</h3>}
+        {restartBtnStatus && (
+          <button
+            className="restart-btn"
+            onClick={restartGame}
+            data-display={restartBtnStatus}
+          >
+            Play Again?
+          </button>
+        )}
+      </div>
       <CardTable
         setGameStarted={setGameStarted}
         cards={cards}

@@ -1,31 +1,58 @@
 .game-title {
-  font-family: "Pokemon-Hollow";
-  color: dimgray;
-  background-color: white;
-  border: dimgray solid 0.2rem;
+  font-family: "Pokemon-Solid";
   font-size: large;
+  background-color: #e0e0e0;
+  color: black;
+  border: 0.25rem solid black;
+  padding-block: 0.25rem;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Pokemon-Solid";
+  font-size: medium;
+  background-color: #e0e0e0;
+  color: black;
+  border: 0.25rem solid black;
+}
+
+.menu-container {
+  display: flex;
+  gap: 0.5rem;
+  place-items: center;
+  justify-content: center;
 }
 
 .game-message {
-  font-family: "Pokemon-Hollow";
-  color: red;
-  padding-block: 0.25rem;
-  background-color: white;
-  border: red dotted 0.5rem;
+  font-family: "Pokemon-Solid";
   font-size: medium;
+  background-color: #e0e0e0;
+  color: black;
+  border: 0.25rem solid black;
+  font-size: medium;
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
 }
 
 .restart-btn {
   font-family: "Pokemon-Solid";
-  font-size: larger;
-  background-color: white;
-  color: gold;
-  border: gold dotted 0.5rem;
-  padding-inline: 1rem;
-  cursor: pointer;
   font-size: medium;
+  background-color: #e0e0e0;
+  color: black;
+  border: 0.25rem solid black;
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  cursor: pointer;
 }
 
 .restart-btn:active {
   transform: translateY(0.4rem);
+}
+
+.restart-btn:hover {
+  background-color: #000;
+  color: #fff;
 }
