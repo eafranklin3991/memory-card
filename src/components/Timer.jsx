@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-function Timer() {
-  const [counter, setCounter] = useState(0);
-
+function Timer({ counter, setCounter, gameStarted }) {
   useEffect(() => {
-    const key = setInterval(() => {
-      setCounter((count) => count + 1);
-    }, 1000);
+    let timer = null;
+    if (gameStarted) {
+      timer = setInterval(() => {
+        setCounter((count) => count + 1);
+      }, 1000);
 
-    return () => {
-      clearInterval(key);
-    };
-  }, []);
+      return () => {
+        clearInterval(timer);
+      };
+    }
+  }, [setCounter, gameStarted]);
 
   return <p>{counter} seconds have passed.</p>;
 }

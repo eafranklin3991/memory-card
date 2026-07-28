@@ -42,6 +42,7 @@ function App() {
   const [cards, setCards] = useState(() => initCards(numMatches));
   function restartGame() {
     setGameStarted(false);
+    setCounter(0);
     setCards(() => initCards(numMatches));
     setRevealed([]);
     setMatched([]);
@@ -49,10 +50,15 @@ function App() {
     setRestartBtnStatus(false);
   }
   const [restartBtnStatus, setRestartBtnStatus] = useState(false);
+  const [counter, setCounter] = useState(0);
   return (
     <div className="wrapper">
       <h1 className="game-title">Memory Card Matching Game</h1>
-      {gameStarted && <Timer />}
+      <Timer
+        gameStarted={gameStarted}
+        counter={counter}
+        setCounter={setCounter}
+      />
       {gameWon && <h3 className="game-message">All Cards Matched!</h3>}
       {restartBtnStatus && (
         <button
