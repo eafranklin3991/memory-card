@@ -2,6 +2,7 @@ import Card from "./Card";
 import "../styles/CardTable.css";
 
 function CardTable({
+  setGameStarted,
   cards,
   numMatches,
   setGameWon,
@@ -12,6 +13,7 @@ function CardTable({
   setRestartBtnStatus,
 }) {
   const handleCardflip = (index) => {
+    setGameStarted(true);
     const card = cards[index];
 
     // Don't allow flipping already matched cards
@@ -32,6 +34,7 @@ function CardTable({
       setMatched(newMatched);
       // All cards matched, game won!
       if (newMatched.length === numMatches) {
+        setGameStarted(false);
         setGameWon(true);
         setRestartBtnStatus(true);
       }
