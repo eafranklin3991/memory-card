@@ -1,5 +1,5 @@
 .card {
-  font-family: "Pokemon-Hollow";
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: white;
   border: 0.2rem solid black;
   border-radius: 1rem;
@@ -28,5 +28,5 @@
 }
 
 .text-overlay > * {
-  font-size: 10cqw;
+  font-size: 15cqw;
 }

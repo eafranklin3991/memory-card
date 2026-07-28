@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "../styles/Timer.css";
 
 function Timer({ counter, setCounter, gameStarted }) {
   useEffect(() => {
@@ -14,7 +15,7 @@ function Timer({ counter, setCounter, gameStarted }) {
     }
   }, [setCounter, gameStarted]);
 
-  return <p>{counter} seconds have passed.</p>;
+  return <p className="timer">{counter} seconds have passed.</p>;
 }
 
 export default Timer;
